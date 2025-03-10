@@ -23,4 +23,3 @@
 - You should not be able to other routes without login
 - If token is not present, redirect the user to login page.
 - Logout
-- Profile
