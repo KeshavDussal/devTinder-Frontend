@@ -20,3 +20,7 @@
 - Login and see if your is coming in Redux Dev Tools in state/store.
 - Navbar should update as soon as user logs in.
 - Refactor your code to add constants file + create a components folder.
+- You should not be able to other routes without login
+- If token is not present, redirect the user to login page.
+- Logout
+- Profile
