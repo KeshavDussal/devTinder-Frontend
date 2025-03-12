@@ -29,3 +29,5 @@
 - show toast message on save profile
 - New page to see all my connections
 - New page to see all my connection requests
+- Feature - Accept/Reject connection request
+-
