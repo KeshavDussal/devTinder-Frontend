@@ -23,3 +23,8 @@
 - You should not be able to other routes without login
 - If token is not present, redirect the user to login page.
 - Logout
+- Get the feed and the feed in the store
+- build the user card on feed
+- Edit profile feature is build
+- show toast message on save profile
+- See all my connections
