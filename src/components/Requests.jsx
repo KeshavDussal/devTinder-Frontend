@@ -49,7 +49,7 @@ const Requests = () => {
           request.fromUserId;
         return (
           <div
-            className="flex justify-between items-center m-4 p-4 border rounded-lg bg-base-300 w-1/3 mx-auto"
+            className="flex justify-between items-center m-4 p-4 border rounded-lg bg-base-300 w-2/3 mx-auto"
             key={_id}
           >
             <div>
