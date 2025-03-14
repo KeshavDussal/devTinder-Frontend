@@ -33,3 +33,46 @@
 - Send/Ignore the user card(connection) from the feed
 - Signup New User
 - E2E testing
+
+Body NavBar Route=/ => Feed Route=/login => Login Route=/connetions => Connections Router=/profile => Profile
+
+# Deployment
+
+- Signup on AWS
+- Launch instance
+- chmod 400 <secret>.pem
+- ssh -i "devTinder-secret.pem" ubuntu@ec2-43-204-96-49.ap-south-1.compute.amazonaws.com
+- Install Node version 16.17.0
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+  exit
+  nvm install 18.18.2
+  node -v
+
+- Git clone
+  git clone https://github.com/KeshavDussal/devTinder-Frontend.git
+  git clone https://github.com/KeshavDussal/devTinder.git
+
+- Frontend
+  - npm install -> dependencies install
+  - npm run build
+  - sudo apt update
+  - sudo apt install nginx
+  - sudo systemctl start nginx
+  - sudo systemctl enable nginx
+  - Copy code from dist(build files) to /var/www/html/
+  - sudo scp -r dist/\* /var/www/html/
+  - Enable port :80 of your instance (by default aws blocks all port of application)
+    http://13.201.78.176/ (Access with public ipaddress - note it should be http then only it will work if https remove s from it.)
+- Backend
+
+  - updated DB password (Optional)
+  - npm start(prod) & npm run dev(development)
+  - allowed ec2 instance public IP on mongodb server
+  - npm intsall pm2 -g
+  - pm2 start npm --name "devTinder-backend" -- start
+  - pm2 logs
+  - pm2 list, pm2 flush <name> , pm2 stop <name>, pm2 delete <name>
+  - (Chatgpt search: nginx proxy pass /api to 7777 node application)
+  - config nginx - /etc/nginx/sites-available/default
+  - restart nginx - sudo systemctl restart nginx
+  - Modify the BASEURL in frontend project to "/api"
